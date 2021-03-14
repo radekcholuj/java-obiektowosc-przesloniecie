@@ -11,7 +11,9 @@ public class ToyShopApp {
             System.out.println("-------- Toy Shop --------");
             System.out.println("1 - add bear");
             System.out.println("2 - add car");
-            System.out.println("3 - display all");
+            System.out.println("3 - add book");
+            System.out.println("4 - add puzzle");
+            System.out.println("5 - display all");
             System.out.println("0 - stop");
             option = scanner.nextInt();
             scanner.nextLine(); // \n
@@ -46,6 +48,35 @@ public class ToyShopApp {
                     toyShop.addCar(car);
                     break;
                 case 3:
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+                    System.out.print("Price: ");
+                    price = scanner.nextDouble();
+                    scanner.nextLine(); // \n
+                    System.out.print("Amount of pages: ");
+                    int pagesAmount = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Age: ");
+                    int age = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Book book = new Book(name,price,pagesAmount,age);
+                    toyShop.addBook(book);
+                    break;
+                case 4:
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+                    System.out.print("Price: ");
+                    price = scanner.nextDouble();
+                    scanner.nextLine(); // \n
+                    System.out.print("Amount of pieces: ");
+                    int piecesAmount = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Puzzle puzzle = new Puzzle(name,price,piecesAmount);
+                    toyShop.addPuzzle(puzzle);
+                    break;
+                case 5:
                     toyShop.displayAll();
                     break;
             }
